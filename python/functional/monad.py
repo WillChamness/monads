@@ -7,8 +7,6 @@ U = TypeVar("U")
 def then(wrapped: Callable[[Any], T], f: Callable[[T], Callable[[Any], U]]) -> Callable[[Any], U]:
     y: Callable[[Any], Callable[[Any], U]] = map(wrapped, f)
     return y(None)
-    
-
 
 
 
